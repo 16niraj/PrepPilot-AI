@@ -312,19 +312,11 @@ npm run dev
 
 ### Dashboard
 
-_Add screenshot here_
+![dashboard](assets/preppilot_ui.jpeg)
 
-### Interview Report
 
-_Add screenshot here_
-
-### Skill Gap Analysis
-
-_Add screenshot here_
-
-### Resume Generation
-
-_Add screenshot here_
+### Interview Report Generation page
+![interview](assets/preppilot_ui1.jpeg)
 
 ---
 
@@ -347,7 +339,7 @@ _Add screenshot here_
 Vercel
 
 ### Backend
-Render / Railway
+Render
 
 ### Database
 MongoDB Atlas
