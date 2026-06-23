@@ -1,10 +1,12 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import "../style/home.scss"
 import { useInterview } from '../hooks/useInterview.js'
 import { useNavigate } from 'react-router'
+import { logout } from "../../auth/services/auth.api"
+import { getMe } from "../../auth/services/auth.api"
 
 const Home = () => {
-
+    const [user, setUser] = useState(null)
     const { loading, generateReport,reports } = useInterview()
     const [ jobDescription, setJobDescription ] = useState("")
     const [ selfDescription, setSelfDescription ] = useState("")
@@ -18,6 +20,20 @@ const Home = () => {
         navigate(`/interview/${data._id}`)
     }
 
+    const handleLogout = async () => {
+        await logout()
+        navigate("/login")
+    }
+
+    useEffect(() => {
+        const fetchUser = async () => {
+            const data = await getMe()
+            setUser(data.user)
+        }
+
+        fetchUser()
+    }, [])
+
     if (loading) {
         return (
             <main className='loading-screen'>
@@ -28,6 +44,18 @@ const Home = () => {
 
     return (
         <div className='home-page'>
+            <div className='top-bar'>
+                <span className='user-name'>
+                    Welcome {user?.username}
+                </span>
+
+                <button
+                    className='logout-btn'
+                    onClick={handleLogout}
+                >
+                    Logout
+                </button>
+            </div>
 
             {/* Page Header */}
             <header className='page-header'>
