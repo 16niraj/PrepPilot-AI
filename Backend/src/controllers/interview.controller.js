@@ -74,7 +74,7 @@ async function getAllInterviewReportsController(req, res) {
  */
 async function generateResumePdfController(req, res) {
     try {
-        console.log("PDF route hit");
+        // console.log("PDF route hit");
 
         const { interviewReportId } = req.params;
 

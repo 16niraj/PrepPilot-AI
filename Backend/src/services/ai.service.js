@@ -5,10 +5,6 @@ const puppeteer = require("puppeteer")
 const chromium = require("@sparticuz/chromium").default;
 
 
-console.log("Chromium object:", chromium);
-console.log("Type:", typeof chromium.executablePath);
-
-
 const ai = new GoogleGenAI({
     apiKey: process.env.GOOGLE_GENAI_API_KEY
 })
