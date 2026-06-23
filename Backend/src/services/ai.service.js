@@ -4,6 +4,9 @@ const { zodToJsonSchema } = require("zod-to-json-schema")
 const puppeteer = require("puppeteer")
 const chromium = require("@sparticuz/chromium")
 
+console.log("Chromium object:", chromium);
+console.log("Type:", typeof chromium.executablePath);
+
 
 const ai = new GoogleGenAI({
     apiKey: process.env.GOOGLE_GENAI_API_KEY
@@ -64,7 +67,7 @@ async function generatePdfFromHtml(htmlContent) {
     const browser = await puppeteer.launch({
         args: chromium.args,
         executablePath: await chromium.executablePath(),
-        headless: true,
+        headless: "shell",
     });
 
     const page = await browser.newPage();
