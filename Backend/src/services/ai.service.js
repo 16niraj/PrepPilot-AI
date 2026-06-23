@@ -3,6 +3,13 @@ const { z } = require("zod")
 const { zodToJsonSchema } = require("zod-to-json-schema")
 const puppeteer = require("puppeteer")
 
+console.log(
+    "Executable Path:",
+    puppeteer.executablePath()
+);
+
+console.log("ENV Path:", process.env.PUPPETEER_EXECUTABLE_PATH);
+
 const ai = new GoogleGenAI({
     apiKey: process.env.GOOGLE_GENAI_API_KEY
 })
