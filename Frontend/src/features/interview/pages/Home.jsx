@@ -44,21 +44,22 @@ const Home = () => {
 
     return (
         <div className='home-page'>
-            <div className='top-bar'>
-                <span className='user-name'>
-                    Welcome {user?.username}
-                </span>
-
-                <button
-                    className='logout-btn'
-                    onClick={handleLogout}
-                >
-                    Logout
-                </button>
-            </div>
 
             {/* Page Header */}
             <header className='page-header'>
+                <div className="top-bar">
+                    <div className="user-name">
+                        Welcome, <span>{user?.username}</span>
+                    </div>
+
+                    <button
+                        className="logout-btn"
+                        onClick={handleLogout}
+                    >
+                        Logout
+                    </button>
+                </div>
+
                 <h1>Create Your Custom <span className='highlight'>Interview Plan</span></h1>
                 <p>Let our AI analyze the job requirements and your unique profile to build a winning strategy.</p>
             </header>
