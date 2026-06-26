@@ -312,11 +312,11 @@ npm run dev
 
 ### Dashboard
 
-![dashboard](assets/preppilot_ui.jpeg)
+![dashboard](assets/preppilot.jpeg)
 
 
 ### Interview Report Generation page
-![interview](assets/preppilot_ui1.jpeg)
+![interview](assets/preppilot1.jpeg)
 
 ---
 
